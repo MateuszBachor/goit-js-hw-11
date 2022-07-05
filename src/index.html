@@ -1,14 +1,94 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
+    <title>Pixabay image search</title>
     <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
   </head>
+  <style>
+    img {
+      width: 640px;
+      height: 420px;
+    }
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      width: 100%;
+      background: #4848c1;
+    }
+    .gallery {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 10px;
+    }
+    input {
+      border: none;
+      padding: 6px;
+      border-radius: 7px 0px 0px 7px;
+    }
+    button {
+      border: none;
+      border-radius: 0px 7px 7px 0px;
+      margin: -6px;
+      background: #d8d3d3;
+      padding: 6px;
+    }
+    input.active {
+      border: none;
+    }
+    .photo-card {
+      padding: 0px 10px 10px 10px;
+    }
+    .info-item {
+      padding: 10px;
+    }
+    .info {
+      display: flex;
+    }
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px;
+    }
+    .load-more {
+      display: block;
+      margin: 10px;
+      border-radius: 7px;
+    }
+    .close-btn {
+      display: block;
+      margin: 10px;
+      border-radius: 7px;
+    }
+  </style>
   <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <div class="search-container">
+      <form class="search-form" id="search-form">
+        <input
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search images..."
+        />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="gallery"></div>
+    <div class="btn-container">
+      <button type="button" class="load-more">Load more</button>
+      <button type="button" class="close-btn">close</button>
+    </div>
+
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
